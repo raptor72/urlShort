@@ -24,29 +24,6 @@ func bytesToString(data []byte) string {
         return string(data[:])
 }
 
-/*
-func parseYAML(yml []byte) ([]yamlStruct, error) {
-        var yamlArray []yamlStruct
-        var y yamlStruct
-        stringYaml := bytesToString(yml)
-        s := strings.Split(stringYaml, "- ")
-        for _, yamlBlock := range s {
-                yamlBlock = strings.ReplaceAll(yamlBlock, "  ", "")
-                if len(yamlBlock) == 0 {
-                    continue
-                }
-                err := yaml.Unmarshal([]byte(yamlBlock), &y)
-                if err != nil {
-                        return nil, err
-                }
-                if y.URL != "" {
-                        yamlArray = append(yamlArray, y)
-                }
-        }
-        return yamlArray, nil
-}
-*/
-
 
 // Shortest way to unmarshalling multiple yaml lines
 func parseYAML(yml []byte) ([]yamlStruct, error) {
